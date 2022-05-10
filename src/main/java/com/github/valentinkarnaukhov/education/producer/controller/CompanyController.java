@@ -8,7 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/company")
+@RequestMapping("/api/v1/companies")
 @RequiredArgsConstructor
 public class CompanyController {
 
@@ -17,7 +17,7 @@ public class CompanyController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public CompanyDto.CompanyPostResponse postCompany(@RequestBody CompanyDto.CompanyPostRequest company) {
-        return companyService.createCompany(company);
+        return companyService.saveCompany(company);
     }
 
 }

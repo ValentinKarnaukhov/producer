@@ -9,7 +9,7 @@ public class MessageDto {
     @Getter
     public static class MessagePostRequest{
         private UUID companyUuid;
-        private String message;
+        private String text;
     }
 
 }

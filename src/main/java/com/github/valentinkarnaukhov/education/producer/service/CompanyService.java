@@ -16,15 +16,15 @@ public class CompanyService {
     private final CompanyRepository companyRepository;
 
     @Transactional
-    public CompanyDto.CompanyPostResponse createCompany(CompanyDto.CompanyPostRequest company) {
-        Company createdCompany = createCompany(company.getName());
+    public CompanyDto.CompanyPostResponse saveCompany(CompanyDto.CompanyPostRequest company) {
+        Company savedCompany = saveCompany(company.getName());
 
         CompanyDto.CompanyPostResponse response = new CompanyDto.CompanyPostResponse();
-        response.setUuid(createdCompany.getUuid());
+        response.setUuid(savedCompany.getUuid());
         return response;
     }
 
-    private Company createCompany(String name) {
+    private Company saveCompany(String name) {
         Company company = new Company();
         company.setName(name);
         company.setUuid(UUID.randomUUID());

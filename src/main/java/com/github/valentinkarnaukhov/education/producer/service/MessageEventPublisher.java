@@ -10,9 +10,9 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class EventPublisherService extends KafkaEventPublisher<MessageEvent> {
+public class MessageEventPublisher extends KafkaEventPublisher<MessageEvent> {
 
-    private final String TOPIC_NAME = "messages";
+        private final String TOPIC_NAME = "messages";
     private final KafkaTemplate<UUID, MessageEvent> kafkaTemplate;
 
     @Override

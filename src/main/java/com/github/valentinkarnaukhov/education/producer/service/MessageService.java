@@ -5,26 +5,26 @@ import com.github.valentinkarnaukhov.education.producer.dto.MessageDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.OffsetDateTime;
+import java.time.Instant;
 import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
 public class MessageService {
 
-    private final EventPublisherService eventPublisherService;
+    private final MessageEventPublisher messageEventPublisher;
 
     public void publishMessage(MessageDto.MessagePostRequest message) {
-        publishMessage(message.getCompanyUuid(), message.getMessage());
+        publishMessage(message.getCompanyUuid(), message.getText());
     }
 
-    private void publishMessage(UUID companyUuid, String message) {
+    private void publishMessage(UUID companyUuid, String text) {
         MessageEvent messageEvent = new MessageEvent();
         messageEvent.setCompanyUuid(companyUuid);
-        messageEvent.setMessage(message);
-        messageEvent.setTimestamp(OffsetDateTime.now());
+        messageEvent.setText(text);
+        messageEvent.setTimestamp(Instant.now());
 
-        eventPublisherService.send(companyUuid, null, messageEvent);
+        messageEventPublisher.send(companyUuid, null, messageEvent);
     }
 
 }
