@@ -1,5 +1,6 @@
 package com.github.valentinkarnaukhov.education.producer.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import java.util.UUID;
 
 @Getter
 @Setter
+@EqualsAndHashCode
 
 @Entity
 @Table(name = "company")

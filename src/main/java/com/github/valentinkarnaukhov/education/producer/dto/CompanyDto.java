@@ -8,6 +8,7 @@ import java.util.UUID;
 public class CompanyDto {
 
     @Getter
+    @Setter
     public static class CompanyPostRequest {
         private String name;
     }

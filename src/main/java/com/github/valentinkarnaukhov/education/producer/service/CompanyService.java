@@ -29,6 +29,7 @@ public class CompanyService {
         Company company = new Company();
         company.setName(name);
         company.setUuid(UUID.randomUUID());
+        companyRepository.existsByUuid(company.getUuid());
         return companyRepository.save(company);
     }
 
