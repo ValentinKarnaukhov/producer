@@ -23,6 +23,7 @@
         <kafka.starter.version>${common.module.version}</kafka.starter.version>
 
         <springfox.starter.version>3.0.0</springfox.starter.version>
+        <keycloak.starter.version>16.1.1</keycloak.starter.version>
     </properties>
 
     <dependencies>
@@ -38,6 +39,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
 
@@ -60,7 +65,11 @@
             <artifactId>springfox-boot-starter</artifactId>
             <version>${springfox.starter.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-spring-boot-starter</artifactId>
+            <version>${keycloak.starter.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>com.github.valentinkarnaukhov.education</groupId>

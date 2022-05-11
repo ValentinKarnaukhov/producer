@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.UUID;
 
 @Service
@@ -29,6 +30,12 @@ public class CompanyService {
         company.setName(name);
         company.setUuid(UUID.randomUUID());
         return companyRepository.save(company);
+    }
+
+    public void validateCompanyExistence(UUID uuid) throws EntityNotFoundException {
+        if (!companyRepository.existsByUuid(uuid)) {
+            throw new EntityNotFoundException(String.format("Company %s doesn't exist.", uuid));
+        }
     }
 
 }
