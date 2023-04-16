@@ -36,7 +36,10 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
+        http
+                .csrf().disable()
+                .headers().frameOptions().disable()
+                .and()
                 .addFilterBefore(keycloakAuthenticationProcessingFilter(), LogoutFilter.class)
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/api/v1/companies").hasAnyAuthority(COMPANY_CREATE.getAuthority())
