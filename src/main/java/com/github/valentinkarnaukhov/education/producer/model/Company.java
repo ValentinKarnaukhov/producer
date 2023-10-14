@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -26,7 +25,4 @@ public class Company {
 
     @Column(name = "uuid", nullable = false, unique = true)
     private UUID uuid;
-
-    @OneToMany(mappedBy = "company")
-    private List<Emplyee> employees;
 }

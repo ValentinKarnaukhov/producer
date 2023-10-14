@@ -20,20 +20,4 @@
         </createTable>
     </changeSet>
 
-    <changeSet author="Valentin Karnaukhov" id="2">
-        <createSequence sequenceName="employee_id_sequence"/>
-        <createTable tableName="employee">
-            <column name="id" type="BIGINT" defaultValueSequenceNext="employee_id_sequence">
-                <constraints nullable="false" primaryKey="true" unique="true"/>
-            </column>
-            <column name="name" type="VARCHAR(30)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="company_id" type="BIGINT">
-                <constraints nullable="false" foreignKeyName="fk_employee_company_id" references="company(id)"/>
-            </column>
-        </createTable>
-    </changeSet>
-
-
 </databaseChangeLog>
