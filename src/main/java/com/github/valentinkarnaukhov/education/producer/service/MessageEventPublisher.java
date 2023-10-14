@@ -12,7 +12,8 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class MessageEventPublisher extends KafkaEventPublisher<MessageEvent> {
 
-        private final String TOPIC_NAME = "messages";
+    private final static String TOPIC_NAME = "messages";
+
     private final KafkaTemplate<UUID, MessageEvent> kafkaTemplate;
 
     @Override

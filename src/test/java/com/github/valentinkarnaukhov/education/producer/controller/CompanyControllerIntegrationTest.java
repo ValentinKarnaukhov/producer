@@ -2,7 +2,6 @@ package com.github.valentinkarnaukhov.education.producer.controller;
 
 import com.github.valentinkarnaukhov.education.producer.dto.CompanyDto;
 import com.github.valentinkarnaukhov.education.producer.repository.CompanyRepository;
-import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

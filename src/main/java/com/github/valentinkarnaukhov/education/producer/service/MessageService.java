@@ -3,13 +3,10 @@ package com.github.valentinkarnaukhov.education.producer.service;
 import com.github.valentinkarnaukhov.education.kafkastarter.event.MessageEvent;
 import com.github.valentinkarnaukhov.education.producer.dto.MessageDto;
 import lombok.RequiredArgsConstructor;
-import org.keycloak.KeycloakPrincipal;
-import org.keycloak.adapters.RefreshableKeycloakSecurityContext;
 import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
 import java.time.Instant;
 import java.util.UUID;
 

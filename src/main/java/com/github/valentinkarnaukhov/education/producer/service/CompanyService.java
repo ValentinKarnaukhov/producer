@@ -25,17 +25,16 @@ public class CompanyService {
         return response;
     }
 
-    private Company saveCompany(String name) {
+    private Company saveCompany(String companyName) {
         Company company = new Company();
-        company.setName(name);
+        company.setName(companyName);
         company.setUuid(UUID.randomUUID());
-        companyRepository.existsByUuid(company.getUuid());
         return companyRepository.save(company);
     }
 
-    public void validateCompanyExistence(UUID uuid) throws EntityNotFoundException {
-        if (!companyRepository.existsByUuid(uuid)) {
-            throw new EntityNotFoundException(String.format("Company %s doesn't exist.", uuid));
+    public void validateCompanyExistence(UUID companyUuid) throws EntityNotFoundException {
+        if (!companyRepository.existsByUuid(companyUuid)) {
+            throw new EntityNotFoundException(String.format("Company %s doesn't exist.", companyUuid));
         }
     }
 

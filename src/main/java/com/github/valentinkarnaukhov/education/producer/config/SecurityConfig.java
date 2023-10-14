@@ -39,7 +39,7 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .addFilterBefore(keycloakAuthenticationProcessingFilter(), LogoutFilter.class)
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/api/v1/companies").hasAnyAuthority(COMPANY_CREATE.getAuthority())
+                .antMatchers(HttpMethod.POST, "/api/v1/company").hasAnyAuthority(COMPANY_CREATE.getAuthority())
                 .antMatchers(HttpMethod.POST, "/api/v1/message").hasAnyAuthority(MESSAGE_SEND.getAuthority())
                 .anyRequest().permitAll();
     }

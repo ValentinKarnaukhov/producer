@@ -8,7 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/companies")
+@RequestMapping("/api/v1/company")
 @RequiredArgsConstructor
 public class CompanyController {
 
