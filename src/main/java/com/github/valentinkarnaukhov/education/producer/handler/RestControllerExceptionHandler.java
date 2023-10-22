@@ -15,8 +15,7 @@ public class RestControllerExceptionHandler {
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
     public ErrorResponse entityNotFoundException(EntityNotFoundException exception) {
         ErrorResponse response = new ErrorResponse();
-        response.setError(exception.getMessage());
-        response.setStatus(HttpStatus.NOT_FOUND.value());
+        response.setErrorMessage(exception.getMessage());
         return response;
     }
 
@@ -24,8 +23,7 @@ public class RestControllerExceptionHandler {
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public ErrorResponse exception(Exception exception) {
         ErrorResponse response = new ErrorResponse();
-        response.setError(exception.getMessage());
-        response.setStatus(HttpStatus.BAD_REQUEST.value());
+        response.setErrorMessage(exception.getMessage());
         return response;
     }
 

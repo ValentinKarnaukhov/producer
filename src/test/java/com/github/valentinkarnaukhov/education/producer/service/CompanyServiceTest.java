@@ -31,17 +31,13 @@ public class CompanyServiceTest {
 
     @Test
     public void saveCompanyGenerateRandomUuid() {
-        Company expected = new Company();
-        expected.setUuid(UUID.randomUUID());
-        expected.setName("TestCompanyName");
-
-        Mockito.when(companyRepository.save(Mockito.any(Company.class))).thenReturn(expected);
+        Mockito.when(companyRepository.save(Mockito.any(Company.class))).thenAnswer(a -> a.getArguments()[0]);
 
         CompanyDto.CompanyPostRequest request = new CompanyDto.CompanyPostRequest();
-        request.setName(expected.getName());
+        request.setName("CompanyName");
         UUID actualUuid = companyService.saveCompany(request).getUuid();
 
-        Assertions.assertEquals(expected.getUuid(), actualUuid);
+        Assertions.assertNotNull(actualUuid);
     }
 
 }

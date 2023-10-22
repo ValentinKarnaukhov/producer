@@ -20,6 +20,7 @@
     <properties>
         <java.version>11</java.version>
         <common.module.version>0.0.1</common.module.version>
+
         <kafka.starter.version>${common.module.version}</kafka.starter.version>
 
         <springfox.starter.version>3.0.0</springfox.starter.version>

@@ -26,15 +26,23 @@ public class CompanyService {
     }
 
     private Company saveCompany(String companyName) {
+        this.validateCompanyName(companyName);
+
         Company company = new Company();
         company.setName(companyName);
         company.setUuid(UUID.randomUUID());
         return companyRepository.save(company);
     }
 
+    private void validateCompanyName(String companyName) {
+        if (companyRepository.existsByName(companyName)) {
+            throw new IllegalArgumentException(String.format("Company with such name already exists: %s", companyName));
+        }
+    }
+
     public void validateCompanyExistence(UUID companyUuid) throws EntityNotFoundException {
         if (!companyRepository.existsByUuid(companyUuid)) {
-            throw new EntityNotFoundException(String.format("Company %s doesn't exist.", companyUuid));
+            throw new EntityNotFoundException(String.format("Company with such UUID doesn't exist: %s", companyUuid));
         }
     }
 

@@ -1,7 +1,7 @@
 package com.github.valentinkarnaukhov.education.producer.service;
 
-import com.github.valentinkarnaukhov.education.kafkastarter.event.MessageEvent;
 import com.github.valentinkarnaukhov.education.kafkastarter.service.KafkaEventPublisher;
+import com.github.valentinkarnaukhov.education.producer.dto.MessageEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;

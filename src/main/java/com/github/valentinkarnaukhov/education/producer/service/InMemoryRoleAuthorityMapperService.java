@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 import static com.github.valentinkarnaukhov.education.producer.service.InMemoryRoleAuthorityMapperService.Authority.*;
 
 @Service
-public class InMemoryRoleAuthorityMapperService implements RoleAuthorityMapper {
+public class InMemoryRoleAuthorityMapperService {
 
     public Collection<String> getAuthorities(String role) {
         return Arrays.stream(Role.values())

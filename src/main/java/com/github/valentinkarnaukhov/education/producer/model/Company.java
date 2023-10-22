@@ -20,7 +20,7 @@ public class Company {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "company_id_generator")
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false, unique = true)
     private String name;
 
     @Column(name = "uuid", nullable = false, unique = true)

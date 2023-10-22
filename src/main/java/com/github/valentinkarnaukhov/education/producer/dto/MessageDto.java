@@ -7,7 +7,7 @@ import java.util.UUID;
 public class MessageDto {
 
     @Getter
-    public static class MessagePostRequest{
+    public static class MessagePostRequest {
         private UUID companyUuid;
         private String text;
     }
